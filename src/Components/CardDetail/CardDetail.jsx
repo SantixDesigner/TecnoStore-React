@@ -4,11 +4,11 @@ const CardDetail = ({ item }) => {
     const onAdd = (quantityProduct) => {
         alert(`Se agregaron ${quantityProduct} productos al carrito`);
     }
-    const { id, nameS, price, image, stock, initial } = item;
+    const { id, nameS, price, imageS, stock, initial } = item;
     return (
         <div className='col-lg-12 col-md-12 col-sm-12 productDetail' key={id}>
             <div className='col-lg-6 col-md-12 col-sm-12 img'>
-                <img src={image} alt={nameS} key={image} data-id={image} className="ms-auto me-auto card-img bg-dark" />
+                <img src={imageS.replaceAll('./', '../')} alt={nameS} key={imageS} data-id={imageS} className="ms-auto me-auto card-img bg-dark" />
             </div>
             <div className='col-lg-6 col-md-12 col-sm-12'>
                 <h4 className='text-danger'>{nameS}</h4>
