@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import './index.css';
-const ButtonNumber = ({ stock, initial, onAdd }) => {
+const ButtonNumber = ({ stock, initial, onAdd, id, nameS, price, imageS }) => {
     const [valor, setValor] = useState(parseInt(initial));
     const [initialS, setInitialS] = useState(parseInt(initial));
     const [stockS, setStock] = useState(parseInt(stock));
-    const [cambio, setCambio] = useState(false);
-    if (cambio === false) {
+    const [changeMessage, setChange] = useState(false);
+    if (changeMessage === false) {
         return <>
             <div className="button">
                 <label htmlFor="" className="label">Cantidad {stockS}<button onClick={() => {
@@ -23,9 +23,9 @@ const ButtonNumber = ({ stock, initial, onAdd }) => {
                 }}>+</button></label>
                 <button className="buttonSecondary" onClick={(e) => {
                     if (valor <= stockS && valor > 0) {
-                        onAdd(valor);
+                        onAdd(id, valor, nameS, imageS, price);
                         setStock(stockS - valor);
-                        setCambio(true);
+                        setChange(true);
                     }
                 }}>Agregar al carrito</button>
             </div>

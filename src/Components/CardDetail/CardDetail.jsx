@@ -1,10 +1,14 @@
 import './style.css';
 import ButtonNumber from '../ItemCount/ItemCount';
+import { useContext } from 'react';
+import CartContext from '../../Context/CartContext';
 const CardDetail = ({ item }) => {
-    const onAdd = (quantityProduct) => {
-        alert(`Se agregaron ${quantityProduct} productos al carrito`);
-    }
+    const {addProducts, isInCart} = useContext(CartContext);
     const { id, nameS, price, imageS, stock, initial } = item;
+    const onAdd = (id, quantity, nameS, imageS, price) => {
+        addProducts(id, quantity, nameS, imageS, price);
+        isInCart(id);
+    }
     return (
         <div className='col-lg-12 col-md-12 col-sm-12 productDetail' key={id}>
             <div className='col-lg-6 col-md-12 col-sm-12 img'>
@@ -14,7 +18,7 @@ const CardDetail = ({ item }) => {
                 <h4 className='text-danger'>{nameS}</h4>
                 <p className='text-danger' key={price}>${price}</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos obcaecati unde qui illum adipisci, molestiae corporis illo nobis nisi, veritatis dolor eius odit laudantium ipsum tempora maxime aliquid tenetur sit distinctio praesentium maiores repellat. Reiciendis hic soluta possimus eveniet quia corporis mollitia, ratione accusamus minus non atque veritatis odit similique.</p> 
-                <ButtonNumber stock={stock} initial={initial} onAdd={onAdd} /> 
+                <ButtonNumber stock={stock} initial={initial} onAdd={onAdd} id={id} nameS={nameS} imageS={imageS} price={price}/> 
             </div>
         </div>
     )
