@@ -2,16 +2,13 @@ import './style.css';
 import ButtonNumber from '../ItemCount/ItemCount';
 import { useCartContext } from '../../Context/CartContext';
 const CardDetail = ({ item }) => {
-    const { addProducts, products } = useCartContext();
+    const { addProducts, products, findIndexToAddQuantity  } = useCartContext();
     const { id, nameS, price, imageS, stock, initial } = item;
     const onAdd = (id, quantity, nameS, imageS, price) => {
         addProducts(id, quantity, nameS, imageS, price);
     }
-    let findIndex = products.findIndex(product => {
-        if (item.id === product.id){
-            return item.id
-        }
-    })
+    let findIndex = 0; 
+    findIndex = findIndexToAddQuantity(item, findIndex);
     if (products[findIndex]) {
         return (
             <div className='col-lg-12 col-md-12 col-sm-12 productDetail'>

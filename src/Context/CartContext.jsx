@@ -21,6 +21,14 @@ export const CartProvider = ({ children }) => {
         products.splice(products.findIndex((i) => i.id === id), 1)
         setProducts([...products])
     }
+    const findIndexToAddQuantity = (item, findIndex) => {
+        findIndex = products.findIndex(product => {
+            if (product.id === item.id){
+                return item.id;
+            }
+        })
+        return findIndex;
+    }
     const clearProducts = () => {
         setProducts([]);
     }
@@ -35,7 +43,7 @@ export const CartProvider = ({ children }) => {
         return products.reduce((add,i) => (add+=i.quantity), 0)
     }
     return (
-        <CartContext.Provider value={{ addProducts, removeProducts, clearProducts, getProducts, products, getTotalPrice, getTotalQuantity }}>
+        <CartContext.Provider value={{ addProducts, removeProducts, clearProducts, getProducts, products, getTotalPrice, getTotalQuantity, findIndexToAddQuantity }}>
             {children}
         </CartContext.Provider>
     )
