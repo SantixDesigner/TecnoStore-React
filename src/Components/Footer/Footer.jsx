@@ -1,7 +1,13 @@
+import { faCopyright } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './style.css'
 const Footer = () => {
-    return(
+    return (
         <footer>
-            <h2>Footer</h2>
+            <div className='d-flex'>
+                <FontAwesomeIcon icon={faCopyright}></FontAwesomeIcon>
+                <h4>Desarrollado por Morillo Santiago</h4>
+            </div>
         </footer>
     )
 }

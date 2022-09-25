@@ -12,8 +12,6 @@ const Cart = () => {
         )
     }
     else {
-        let endPrice = getTotalPrice();
-        let totalQuantity = getTotalQuantity();
         return (
             <div className="container">
                 <div className="row">
@@ -33,10 +31,10 @@ const Cart = () => {
                 </div>
                 <div className="row">
                     <div className="col-lg-6 col-md-6 col-sm-12">
-                        <p>Precio total: ${endPrice}</p>
+                        <p>Precio total: ${getTotalPrice()}</p>
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-12">
-                        <p className="ms-auto">Cantidad total: {(totalQuantity === 1 ? <>un producto</> : <>{totalQuantity} productos</>)}</p>
+                        <p className="ms-auto">Cantidad total: {(getTotalQuantity() === 1 ? <>un producto</> : <>{getTotalQuantity()} productos</>)}</p>
                     </div>
                 </div>
                 <div className="row">

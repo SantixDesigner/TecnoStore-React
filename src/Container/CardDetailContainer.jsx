@@ -1,24 +1,32 @@
 import './style.css';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import {getFirestore, collection, getDocs} from 'firebase/firestore';
 import CardDetail from "../Components/CardDetail/CardDetail";
-const getCard = async (setProductos) => {
-    try {
-        let response = await fetch('../data.json');
-        let data = await response.json();
-        setProductos(data);
-    } catch (e) {
-        console.log(e);
-    }
-}
 
 const CardDetailContainer = () => {
+
     const [productos, setProductos] = useState([]);
     useEffect(() => {
         setTimeout(() => {
-            getCard(setProductos);
-        }, 2000)
+            getProducts();
+        },2000)
     }, [productos]);
+    const getProducts = () => {
+        try {
+            const db = getFirestore();
+            const items = collection(db,'items');
+            getDocs(items).then((snapshot) => {
+                const docs = snapshot.docs.map((doc) => ({
+                    id:doc.id,
+                    ...doc.data()
+                }))
+                setProductos(docs);
+            })
+        } catch (e) {
+            console.log(e);
+        }
+    }
     const { idProducto } = useParams();
     if (productos.length === 0){
         return <p>Loading...</p>
