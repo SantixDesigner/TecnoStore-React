@@ -15,9 +15,6 @@ const ItemListContainer = () => {
                 }))
                 setProductos(docs);
             })
-/*             let response = await fetch('../data.json');
-            let data = await response.json();
-            setProductos(data); */
         } catch (e) {
             console.log(e);
         }

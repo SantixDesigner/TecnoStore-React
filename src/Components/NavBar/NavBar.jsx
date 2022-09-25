@@ -21,7 +21,7 @@ const Navbar = () => {
         },2000)
     })
     return <>
-        <nav className='nav'>
+        <nav className='nav mb-2'>
             <Link to={"/"} className="a">
                 <h1 className='mt-2'>TecnoStore</h1>
             </Link>
