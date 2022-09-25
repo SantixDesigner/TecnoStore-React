@@ -20,7 +20,7 @@ const Cart = () => {
                             <div className="d-flex" key={`container${item.id}`}>
                                 <img src={item.imageS} alt={item.imageS} className="imgCart col-3 mt-auto mb-auto" key={item.imageS} />
                                 <h3 key={item.nameS} className="col-3 mt-auto mb-auto">{item.nameS}</h3>
-                                <h5 key={item.price} className="col-3 mt-auto mb-auto">${item.price}</h5>
+                                <h5 key={item.price} className="col-3 mt-auto mb-auto">${item.price*item.quantity}</h5>
                                 <input type="submit" value="Quitar" className="col-3 inputQuitar mt-auto mb-auto" onClick={(e) => {
                                     e.preventDefault();
                                     removeProducts(item.id);
