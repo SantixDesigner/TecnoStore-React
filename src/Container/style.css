@@ -33,6 +33,7 @@
     border-radius: 10px;
     outline: none;
     border: none;
+    text-decoration: none;
     color: white;
     background-color: rgb(26, 130, 0);
 }

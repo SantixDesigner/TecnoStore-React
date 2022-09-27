@@ -1,6 +1,6 @@
 import { useCartContext } from "../Context/CartContext";
 import './style.css';
-import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 const Cart = () => {
     const { products, getTotalPrice, getTotalQuantity, removeProducts, clearProducts } = useCartContext();
     console.log(products);
@@ -42,14 +42,7 @@ const Cart = () => {
                         <input type="button" value="Vaciar carrito" className="inputQuitar2" onClick={clearProducts} />
                     </div>
                     <div className="text-center col-6">
-                        <input type="button" value="Comprar" className="comprarProductos" onClick={() => {
-                            clearProducts();
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Compra',
-                                text:"Se ha realizado con éxito"
-                              })
-                        }}/>
+                        <Link to="/formulario" className="comprarProductos">Ir a comprar</Link>
                     </div>
                 </div>
             </div>

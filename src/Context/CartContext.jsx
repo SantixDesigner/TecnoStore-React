@@ -26,6 +26,9 @@ export const CartProvider = ({ children }) => {
             if (product.id === item.id){
                 return item.id;
             }
+            else{
+                return null;
+            }
         })
         return findIndex;
     }

@@ -1,0 +1,18 @@
+form div{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 100px;
+}
+.msj{
+    margin-right: 102.5px;
+}
+@media(max-width:1155px){
+    form div{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .msj{
+        margin: 0;
+    }
+}
