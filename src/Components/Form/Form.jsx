@@ -33,29 +33,31 @@ const Form = () => {
     }
 
     return (
-        <form action="">
-            <div>
-                <div>
-                    <label htmlFor="">Nombre</label>
-                    <input type="text" name="name" id="name" onChange={changeHandler} value={form.name} />
-                </div>
-                <div>
-                    <label htmlFor=""className="msj">Email</label>
-                    <input type="text" name="email" id="email" onChange={changeHandler} value={form.email} />
-                </div>
-            </div>
-            <div>
-                <div>
-                    <label htmlFor="">Mensaje</label>
-                    <input type="text" name="message" id="message" onChange={changeHandler} value={form.message} />
-                </div>
-                <div>
-                    <label htmlFor="">Número de Teléfono</label>
-                    <input type="text" />
-                </div>
-            </div>
-            <button onClick={submitHandler}>Enviar</button>
+        <div className='checkout-container'>
+        <h2 className='checkout__title'>Finalizar compra</h2>
+        <h3 className='checkout__subtitle'>Completa los campos:</h3>
+        <form onSubmit={submitHandler}>
+          <div className='checkout__input-container'>
+            <label className='checkout__label'>Nombre</label>
+            <input className='checkout__input' name="name" id="name" onClick={changeHandler} />
+          </div>
+          <div className='checkout__input-container'>
+            <label className='checkout__label'>Telefono</label>
+            <input className='checkout__input' type="tel"/>
+
+          </div>
+          <div className='checkout__input-container'>
+            <label className='checkout__label'>Email</label>
+            <input className='checkout__input' type="email" name="email" id="email" onClick={changeHandler} />
+          </div>
+          <div className='checkout__input-container'>
+            <label className='checkout__label'>Mensaje</label>
+            <input className='checkout__input' type="text" name="message" id="message" onClick={changeHandler} />
+          </div>
+          <input className='checkout__btn' type="submit" value="Enviar" />
         </form>
+
+      </div>
     )
 }
 export default Form;
