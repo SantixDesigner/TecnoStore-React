@@ -12,6 +12,7 @@ const Form = () => {
       email: '',
       message: ''
   });
+  const [isSetOrderConfirmed, setOrderConfirmed] = useState(false);
   const changeHandler = (event) => {
       const newForm = { ...form, [event.target.name]: event.target.value };
       setForm(newForm);
@@ -28,14 +29,14 @@ const Form = () => {
               text: `Tu codigo de seguimiento es ${snapshot.id}`,
               icon: 'success',
               footer: `Haz comprado ${getTotalQuantity()} productos a un precio total de $${getTotalPrice()}`,
-              confirmButtonText: 'Ok'
           })
+          setOrderConfirmed(true);
       });
       clearProducts();
   }
   return (
     <div className='checkout-container'>
-      <FormChildren changeHandler={changeHandler} submitHandler={submitHandler} />
+      <FormChildren changeHandler={changeHandler} submitHandler={submitHandler} isSetOrderConfirmed={isSetOrderConfirmed} />
     </div>
   )
 }
