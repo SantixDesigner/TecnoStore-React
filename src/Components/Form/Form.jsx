@@ -16,7 +16,7 @@ const Form = () => {
       setForm(newForm);
   };
   const submitHandler = (event) => {
-      const items = products.map(item => { return { id: item.id, title: item.nameS, price: item.price } })
+      const items = products.map(item => { return { id: item.id, title: item.nameS, price: item.price, quantity: item.quantity } })
       const order = { form, items: items, total: getTotalPrice() }
       event.preventDefault();
       const db = getFirestore();

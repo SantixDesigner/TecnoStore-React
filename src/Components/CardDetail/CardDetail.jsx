@@ -13,7 +13,7 @@ const CardDetail = ({ item }) => {
         return (
             <div className='col-lg-12 col-md-12 col-sm-12 productDetail'>
                 <div className='col-lg-6 col-md-12 col-sm-12 img'>
-                    <img src={products[findIndex].imageS.replaceAll('./', '../')} alt={products[findIndex].nameS} data-id={products[findIndex].imageS} className="ms-auto me-auto card-img bg-dark" />
+                    <img src={products[findIndex].imageS.replaceAll('./', '../')} alt={products[findIndex].nameS} data-id={products[findIndex].imageS} className="ms-auto me-auto card-img border border-secondary" />
                 </div>
                 <div className='col-lg-6 col-md-12 col-sm-12'>
                     <h4 className='text-danger'>{products[findIndex].nameS}</h4>
@@ -29,7 +29,7 @@ const CardDetail = ({ item }) => {
         return (
             <div className='col-lg-12 col-md-12 col-sm-12 productDetail'>
                 <div className='col-lg-6 col-md-12 col-sm-12 img'>
-                    <img src={imageS.replaceAll('./', '../')} alt={nameS} data-id={imageS} className="ms-auto me-auto card-img bg-dark" />
+                    <img src={imageS.replaceAll('./', '../')} alt={nameS} data-id={imageS} className="ms-auto me-auto card-img border border-secondary" />
                 </div>
                 <div className='col-lg-6 col-md-12 col-sm-12'>
                     <h4 className='text-danger'>{nameS}</h4>
