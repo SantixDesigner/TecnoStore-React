@@ -2,8 +2,8 @@ import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { useCartContext } from '../../Context/CartContext';
-import '../ItemCount/ItemCount';
+import { useCartContext } from '../../context/CartContext';
+import '../item-count/ItemCount';
 const Render = () => {
     const { getTotalQuantity } = useCartContext();
     return <>

@@ -1,7 +1,7 @@
 import './style.css';
 import { useState, useEffect } from 'react';
-import Cards from './Cards';
-import { useFirestoreContext } from '../Context/FirestoreContext';
+import CardsList from './CardsList';
+import { useFirestoreContext } from '../context/FirestoreContext';
 const ItemListContainer = () => {
     const getProducts  = useFirestoreContext();
     const [productos, setProductos] = useState([]);
@@ -10,11 +10,10 @@ const ItemListContainer = () => {
             getProducts(setProductos);
         }, 2000)
     });
-    if (productos.length === 0){
-        return <p>Loading...</p>
-    }
-    return <>
-        <Cards items={productos} key="products" />
-    </>
+    return productos.length === 0 
+    ?
+        <p>Loading...</p>
+    :
+        <CardsList items={productos} key="products" />
 }
 export default ItemListContainer;

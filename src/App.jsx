@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Footer from './Components/Footer/Footer';
-import Navbar from './Components/NavBar/NavBar';
-import CardDetailContainer from './Container/CardDetailContainer';
-import ItemListContainer from './Container/ItemListContainer';
-import { CartProvider } from './Context/CartContext.jsx';
-import Cart from './Container/Cart'
-import Form from './Components/Form/Form';
-import { FirestoreContext } from './Context/FirestoreContext';
+import Footer from './components/footer/Footer';
+import Navbar from './components/navbar/NavBar';
+import CardDetailContainer from './container/CardDetailContainer';
+import ItemListContainer from './container/ItemListContainer';
+import { CartProvider } from './context/CartContext.jsx';
+import Cart from './container/Cart'
+import Form from './components/form/Form';
+import { FirestoreContext } from './context/FirestoreContext';
 function App() {
   return <>
     <div className="App">

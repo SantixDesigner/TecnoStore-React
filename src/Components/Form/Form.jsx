@@ -1,9 +1,10 @@
 
 import './form.css'
 import { getFirestore, addDoc, collection } from 'firebase/firestore'
-import { useCartContext } from "../../Context/CartContext";
+import { useCartContext } from "../../context/CartContext";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import FormChildren from '../form-children/FormChildren';
 const Form = () => {
   const { products, getTotalPrice, clearProducts, getTotalQuantity } = useCartContext();
   const [form, setForm] = useState({
@@ -34,29 +35,7 @@ const Form = () => {
   }
   return (
     <div className='checkout-container'>
-      <h2 className='checkout__title'>Finalizar compra</h2>
-      <h3 className='checkout__subtitle'>Completa los campos:</h3>
-      <form onSubmit={submitHandler}>
-        <div className='checkout__input-container'>
-          <label className='checkout__label'>Nombre</label>
-          <input className='checkout__input' name="name" id="name" onClick={changeHandler} />
-        </div>
-        <div className='checkout__input-container'>
-          <label className='checkout__label'>Telefono</label>
-          <input className='checkout__input' type="tel" />
-
-        </div>
-        <div className='checkout__input-container'>
-          <label className='checkout__label'>Email</label>
-          <input className='checkout__input' type="email" name="email" id="email" onClick={changeHandler} />
-        </div>
-        <div className='checkout__input-container'>
-          <label className='checkout__label'>Mensaje</label>
-          <input className='checkout__input' type="text" name="message" id="message" onClick={changeHandler} />
-        </div>
-        <input className='checkout__btn' type="submit" value="Enviar" />
-      </form>
-
+      <FormChildren changeHandler={changeHandler} submitHandler={submitHandler}/>
     </div>
   )
 }

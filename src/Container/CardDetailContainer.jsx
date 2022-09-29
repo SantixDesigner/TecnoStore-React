@@ -1,10 +1,10 @@
 import './style.css';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import CardDetail from "../Components/CardDetail/CardDetail";
-import { useFirestoreContext } from '../Context/FirestoreContext';
+import CardDetail from "../components/card-detail/CardDetail";
+import { useFirestoreContext } from '../context/FirestoreContext';
 const CardDetailContainer = () => {
-    const getProducts  = useFirestoreContext();
+    const getProducts = useFirestoreContext();
     const [productos, setProductos] = useState([]);
     useEffect(() => {
         setTimeout(() => {
@@ -13,10 +13,8 @@ const CardDetailContainer = () => {
     });
 
     const { idProducto } = useParams();
-    if (productos.length === 0) {
-        return <p>Loading...</p>
-    }
-    return <>
+    return productos.length === 0 ? <p>Loading...</p>
+        :
         <div className="container mt-3">
             <div className="row">
                 {productos.map(item => {
@@ -26,6 +24,5 @@ const CardDetailContainer = () => {
                 })}
             </div>
         </div>
-    </>
 }
 export default CardDetailContainer; 

@@ -27,15 +27,24 @@
     background-color: rgb(180, 58, 58);
 }
 .comprarProductos{
+    text-decoration: none;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
     max-width: 150px;
     width: 100%;
     padding: 10px;
     border-radius: 10px;
     outline: none;
     border: none;
-    text-decoration: none;
     color: white;
     background-color: rgb(26, 130, 0);
+}
+.comprarProductos:hover{
+    color: white;
+}
+.comprarProductos :hover{
+    color:white;
 }
 @media (max-width:500px){
     .container .row .d-flex{
