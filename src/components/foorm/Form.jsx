@@ -35,7 +35,7 @@ const Form = () => {
   }
   return (
     <div className='checkout-container'>
-      <FormChildren changeHandler={changeHandler} submitHandler={submitHandler}/>
+      <FormChildren changeHandler={changeHandler} submitHandler={submitHandler} />
     </div>
   )
 }

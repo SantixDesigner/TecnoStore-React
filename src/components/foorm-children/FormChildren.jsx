@@ -9,16 +9,15 @@ const FormChildren = ({ changeHandler, submitHandler }) => {
         <form onSubmit={submitHandler}>
             <div className='checkout__input-container'>
                 <label className='checkout__label'>Nombre</label>
-                <input className='checkout__input' name="name" id="name" onClick={changeHandler} />
+                <input className='checkout__input' name="name" id="name" onClick={changeHandler} required/>
             </div>
             <div className='checkout__input-container'>
                 <label className='checkout__label'>Telefono</label>
-                <input className='checkout__input' type="tel" />
-
+                <input className='checkout__input' type="number" required />
             </div>
             <div className='checkout__input-container'>
                 <label className='checkout__label'>Email</label>
-                <input className='checkout__input' type="email" name="email" id="email" onClick={changeHandler} />
+                <input className='checkout__input' type="email" name="email" id="email" onClick={changeHandler} required />
             </div>
             <div className='checkout__input-container'>
                 <label className='checkout__label'>Mensaje</label>
@@ -28,7 +27,7 @@ const FormChildren = ({ changeHandler, submitHandler }) => {
                 () => {
                     setTimeout(() => {
                         setIsSent(true);
-                    }, 2500)
+                    },0)
                 }}
             /> : <Link to="/" className="comprarProductos mt-2">Volver atrás</Link>)}
         </form>
