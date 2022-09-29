@@ -3,7 +3,6 @@ import './style.css';
 import { Link } from "react-router-dom";
 const Cart = () => {
     const { products, getTotalPrice, getTotalQuantity, removeProducts, clearProducts } = useCartContext();
-    console.log(products);
     if (products.length === 0) {
         return (
             <div className="text-center">

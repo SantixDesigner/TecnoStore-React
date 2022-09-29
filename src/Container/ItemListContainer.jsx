@@ -1,29 +1,15 @@
 import './style.css';
 import { useState, useEffect } from 'react';
 import Cards from './Cards';
-import {getFirestore, collection, getDocs} from 'firebase/firestore';
+import { useFirestoreContext } from '../Context/FirestoreContext';
 const ItemListContainer = () => {
+    const getProducts  = useFirestoreContext();
     const [productos, setProductos] = useState([]);
-    const componentLoad = async () => {
-        try {
-            const db = getFirestore();
-            const items = collection(db,'items');
-            getDocs(items).then((snapshot) => {
-                const docs = snapshot.docs.map((doc) => ({
-                    id:doc.id,
-                    ...doc.data()
-                }))
-                setProductos(docs);
-            })
-        } catch (e) {
-            console.log(e);
-        }
-    }
     useEffect(() => {
         setTimeout(() => {
-            componentLoad();
+            getProducts(setProductos);
         }, 2000)
-    }, [productos])
+    });
     if (productos.length === 0){
         return <p>Loading...</p>
     }
