@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import Card from '../components/card/Card.jsx';
+import Card from '../components/Card/Card.jsx';
 const CardsList = ({ items }) => {
     const { idCategoria } = useParams();
     return idCategoria !== undefined ?

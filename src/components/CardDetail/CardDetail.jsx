@@ -1,5 +1,5 @@
 import './style.css';
-import ButtonNumber from '../item-count/ItemCount';
+import ButtonNumber from '../ItemCount/ItemCount';
 import { useCartContext } from '../../context/CartContext';
 const CardDetail = ({ item }) => {
     const { addProducts, products, findIndexToAddQuantity  } = useCartContext();

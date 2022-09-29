@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Footer from './components/footer/Footer';
-import Navbar from './components/navbar/NavBar';
+import Footer from './components/Footer/Footer';
+import Navbar from './components/NavBar/NavBar';
 import CardDetailContainer from './container/CardDetailContainer';
 import ItemListContainer from './container/ItemListContainer';
 import { CartProvider } from './context/CartContext.jsx';
 import Cart from './container/Cart'
-import Form from './components/form/Form';
+import Form from './components/Form/Form';
 import { FirestoreContext } from './context/FirestoreContext';
 function App() {
   return <>

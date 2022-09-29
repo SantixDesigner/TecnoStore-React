@@ -4,7 +4,7 @@ import { getFirestore, addDoc, collection } from 'firebase/firestore'
 import { useCartContext } from "../../context/CartContext";
 import Swal from "sweetalert2";
 import { useState } from "react";
-import FormChildren from '../form-children/FormChildren';
+import FormChildren from '../FormChildren/FormChildren';
 const Form = () => {
   const { products, getTotalPrice, clearProducts, getTotalQuantity } = useCartContext();
   const [form, setForm] = useState({

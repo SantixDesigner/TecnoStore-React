@@ -1,5 +1,5 @@
 import './index.css';
-import Render from '../cart-widget/CartWidget';
+import Render from '../CartWidget/CartWidget';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';

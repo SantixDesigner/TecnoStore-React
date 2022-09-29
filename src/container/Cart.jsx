@@ -1,7 +1,7 @@
 import { useCartContext } from "../context/CartContext";
 import './style.css';
 import { Link } from "react-router-dom";
-import CardCart from "../components/card-cart/CardCart";
+import CardCart from "../components/CardCart/CardCart";
 const Cart = () => {
     const { products, getTotalPrice, getTotalQuantity, clearProducts } = useCartContext();
     return products.length === 0 

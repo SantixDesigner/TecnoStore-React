@@ -1,7 +1,7 @@
 import './style.css';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import CardDetail from "../components/card-detail/CardDetail";
+import CardDetail from "../components/CardDetail/CardDetail";
 import { useFirestoreContext } from '../context/FirestoreContext';
 const CardDetailContainer = () => {
     const getProducts = useFirestoreContext();
