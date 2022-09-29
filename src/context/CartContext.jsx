@@ -7,19 +7,19 @@ export const CartProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
     const addProducts = (id, quantity, nameS, imageS, price) => {
         let findIndex = products.findIndex(searchProduct => {
-            return searchProduct.id === id;
+            return searchProduct.id === id; //Retorna el id del product
         })
         findIndex === -1 && setProducts([...products, { id: id, quantity: quantity, nameS: nameS, imageS: imageS, price: price }])
         if (findIndex >= 0){
             products[findIndex].quantity = products[findIndex].quantity+quantity;
-        }
+        } 
     }
     useEffect(()=> {
         console.log(products);
     },[products])
     const removeProducts = (id) => {
         products.splice(products.findIndex((i) => i.id === id), 1)
-        setProducts([...products])
+        setProducts([...products]) //Setea los productos
     }
     const findIndexToAddQuantity = (item, findIndex) => {
         findIndex = products.findIndex(product => {

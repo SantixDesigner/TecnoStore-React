@@ -6,6 +6,7 @@ export const useFirestoreContext = () => useContext(FirestoreContextProvider);
 export const FirestoreContext = ({ children }) => {
     const getProducts = (setProductos) => {
         try {
+            //Agarra el firestore
             const db = getFirestore();
             const items = collection(db, 'items');
             getDocs(items).then((snapshot) => {
