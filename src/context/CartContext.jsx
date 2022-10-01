@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useContext } from 'react';
 import { createContext, useState } from 'react';
 const CartContext = createContext();
@@ -14,9 +13,6 @@ export const CartProvider = ({ children }) => {
             products[findIndex].quantity = products[findIndex].quantity+quantity;
         } 
     }
-    useEffect(()=> {
-        console.log(products);
-    },[products])
     const removeProducts = (id) => {
         products.splice(products.findIndex((i) => i.id === id), 1)
         setProducts([...products]) //Setea los productos
