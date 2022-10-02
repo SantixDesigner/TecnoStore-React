@@ -9,7 +9,7 @@ const FormChildren = ({ changeHandler, submitHandler, isSetOrderConfirmed }) => 
         <form onSubmit={submitHandler}>
             <div className='checkout__input-container'>
                 <label className='checkout__label'>Nombre</label>
-                <input className='checkout__input' name="name" id="name" onClick={changeHandler} required/>
+                <input className='checkout__input' name="name" id="name" onChange={changeHandler} required/>
             </div>
             <div className='checkout__input-container'>
                 <label className='checkout__label'>Telefono</label>
@@ -17,11 +17,11 @@ const FormChildren = ({ changeHandler, submitHandler, isSetOrderConfirmed }) => 
             </div>
             <div className='checkout__input-container'>
                 <label className='checkout__label'>Email</label>
-                <input className='checkout__input' type="email" name="email" id="email" onClick={changeHandler} required />
+                <input className='checkout__input' type="email" name="email" id="email" onChange={changeHandler} required />
             </div>
             <div className='checkout__input-container'>
                 <label className='checkout__label'>Mensaje</label>
-                <input className='checkout__input' type="text" name="message" id="message" onClick={changeHandler} />
+                <input className='checkout__input' type="text" name="message" id="message" onChange={changeHandler} />
             </div>
             {(isSent === false && isSetOrderConfirmed === false ? <input className='checkout__btn' type="submit" value="Enviar" onClick={
                 () => {
